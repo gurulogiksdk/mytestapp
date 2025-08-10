@@ -98,7 +98,7 @@ Impact Adjustment (industry-backed):
 
 
 Compliance (per domain):
-- Compliance = “Y” if A_i ≥ 0.8 × T_i, else “N”. (Independent of gating.)
+- Compliance = “Y” if Actual Score ≥ 0.8 × Target Score, else “N”. (Independent of gating.)
 
 
 PASS/FAIL gating:
@@ -204,7 +204,11 @@ Output & Style Rules (apply everywhere)
 - Always name exact services/configs for platform-specific recommendations.
 - Validation must specify proof artifacts (e.g., DNS/WAF export, Key Vault settings, DR drill logs).
 - Use risk icons: 🔴 High / 🟡 Medium / 🟢 Low.
-- Do not repeat any section or heading in the output. Each section must appear only once in the final assessment.
+
+
+- Format the output in a modern, visually distinct block (stencil) style for each section. Use clear section headings, bold dividers, and visually separated blocks for each major section (e.g., Executive Summary, Scoring Breakdown, Gap Remediation Matrix, Evidence Index, RCA Program Impact). Use markdown features such as bold, tables, and horizontal rules (---) to create a clean, professional, and easy-to-read report. Each section should be clearly separated and visually appealing.
+*** End Patch
+*** End Patch
 
 ----------------------------------------------------------------
 MANDATORY: At the end of your output, always include a clearly separated section titled “RCA Program Impact (Leadership)” that reviews the RCA analysis against the assessment output, as described in Section VI. This section must be present in every assessment, even if no RCA evidence is found (in which case, state “Not evidenced in uploads” and summarize any relevant findings or gaps).

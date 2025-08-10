@@ -80,15 +80,16 @@ def generate_response(openAI_client, tier_level, files_dict):
     contents_list = create_contents_list(file_id_dict=file_id_dict)
     
     response_v = openAI_client.responses.create(
-    model="gpt-4o-mini",  # or "gpt-3.5-turbo"
-    tools=[{"type": "web_search_preview"}],
-    instructions=system_instruction + "\nIdentify the respective files automatically.",
-    input=[
-        {
-            "role": "user",
-            "content": contents_list
-        }
-    ]
+        model="gpt-4o-mini",  # or "gpt-3.5-turbo"
+        tools=[{"type": "web_search_preview"}],
+        instructions=system_instruction + "\nIdentify the respective files automatically.",
+        input=[
+            {
+                "role": "user",
+                "content": contents_list
+            }
+        ],
+        temperature=0
     )
 
 
