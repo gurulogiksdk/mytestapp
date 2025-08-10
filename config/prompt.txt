@@ -29,11 +29,11 @@ II. Processing Pipeline
 ----------------------------------------------------------------
 1) Footprint & Flow Mapping — Identify workloads, platforms, and key data/traffic/identity flows from evidence. Provide a concise, evidence-anchored diagram description.
 
-2) Domain-by-Domain Review — Use the 25 domains in Section IV. Create a table with columns:
-  Domain | Current Design (Evidence & Platform) | Gap & Architectural Risk | Target Pattern for {TierLevel} (platform-specific) | Detailed Implementation Steps | Validation & Evidence Required | RCA Correlation | Risk Rating (🔴/🟡/🟢)
-   - Use detailed, self-contained cells (what, where, why, how).
-   - Reference exact services/configs for Target Pattern.
-   - If no evidence for a domain: Current Design = “Not evidenced in uploads”, and keep other cells minimal but actionable.
+
+2) Domain-by-Domain Review — Use the 25 domains in Section IV. After your narrative, you MUST include a detailed domain assessment table with the following columns:
+| Domain # | Domain Name | Current Design (Evidence & Platform) | Gap & Architectural Risk | Target Pattern for {TierLevel} (platform-specific) | Detailed Implementation Steps | Validation & Evidence Required | RCA Correlation | Risk Rating (🔴/🟡/🟢) |
+|----------|------------|--------------------------------------|-------------------------|-----------------------------------------------|--------------------------|-----------------------------|------------------|--------------------------|
+For each row, provide detailed, self-contained cells (what, where, why, how). Reference exact services/configs for Target Pattern. If no evidence for a domain: Current Design = “Not evidenced in uploads”, and keep other cells minimal but actionable.
 
 3) Cross-Domain Weaknesses — Identify systemic issues spanning multiple domains (design/process/human factors). Cite incidents/RCAs where applicable.
 
