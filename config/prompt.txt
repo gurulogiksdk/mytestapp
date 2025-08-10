@@ -148,8 +148,8 @@ A. Executive Summary
 - Final RRI (%):
 - Status (PASS/FAIL) and precise reason (threshold and/or failing critical domains):
 - Business Impact if Down (quantified if evidenced; otherwise classify 🔴/🟡/🟢 with rationale and citations):
-- Top 3 Strengths (evidence):
-- Top 3 Gaps (evidence):
+- Top 5 Strengths (evidence):
+- Top 5 Gaps (evidence):
 
 B. Scoring Breakdown (include all 25 domains; evidence-backed)
 | Domain # | Domain Name | Weight (%) | Target | Actual Score | Points | Compliance | Evidence |
