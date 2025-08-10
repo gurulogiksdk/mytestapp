@@ -152,10 +152,11 @@ A. Executive Summary
 - Top 3 Gaps (evidence):
 
 B. Scoring Breakdown (include all 25 domains; evidence-backed)
-| Domain | Weight (%) | Target | Actual Score | Points | Compliance | Evidence |
-|--------|------------|--------|--------------|--------|------------|----------|
-- For domains without evidence, set Actual=0, compute Points accordingly, set Compliance=N, and set Evidence to “Not evidenced in uploads”.
-- After the table, include the formula footnote and show BaseRRI, Impact Multiplier, and FinalRRI.
+| Domain # | Domain Name | Weight (%) | Target | Actual Score | Points | Compliance | Evidence |
+|----------|------------|------------|--------|--------------|--------|------------|----------|
+For each row, show both the domain number and the full domain name (e.g., "1", "Global & Regional Traffic Management / Edge").
+For domains without evidence, set Actual=0, compute Points accordingly, set Compliance=N, and set Evidence to “Not evidenced in uploads”.
+After the table, include the formula footnote and show BaseRRI, Impact Multiplier, and FinalRRI.
 
 C. Gap Remediation Matrix
 | Gap ID | Domain | Risk Impact (🔴/🟡/🟢) | Recommended Action | Owner | Timeline | Evidence |
@@ -192,6 +193,7 @@ Presentation:
 - Keep this section clearly separated at the bottom under “RCA Program Impact (Leadership)”.
 - Use exact citations [file, page] for every metric or statement.
 
+
 ----------------------------------------------------------------
 Output & Style Rules (apply everywhere)
 ----------------------------------------------------------------
@@ -201,3 +203,6 @@ Output & Style Rules (apply everywhere)
 - Always name exact services/configs for platform-specific recommendations.
 - Validation must specify proof artifacts (e.g., DNS/WAF export, Key Vault settings, DR drill logs).
 - Use risk icons: 🔴 High / 🟡 Medium / 🟢 Low.
+
+----------------------------------------------------------------
+MANDATORY: At the end of your output, always include a clearly separated section titled “RCA Program Impact (Leadership)” that reviews the RCA analysis against the assessment output, as described in Section VI. This section must be present in every assessment, even if no RCA evidence is found (in which case, state “Not evidenced in uploads” and summarize any relevant findings or gaps).
