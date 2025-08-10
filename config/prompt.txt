@@ -197,12 +197,14 @@ Presentation:
 ----------------------------------------------------------------
 Output & Style Rules (apply everywhere)
 ----------------------------------------------------------------
+
 - Output only what is evidenced in uploads; do not invent content.
 - Use complete sentences in all cells; tables must be self-contained (what, where, why, how).
 - Use the exact phrase “Not evidenced in uploads” where applicable.
 - Always name exact services/configs for platform-specific recommendations.
 - Validation must specify proof artifacts (e.g., DNS/WAF export, Key Vault settings, DR drill logs).
 - Use risk icons: 🔴 High / 🟡 Medium / 🟢 Low.
+- Do not repeat any section or heading in the output. Each section must appear only once in the final assessment.
 
 ----------------------------------------------------------------
 MANDATORY: At the end of your output, always include a clearly separated section titled “RCA Program Impact (Leadership)” that reviews the RCA analysis against the assessment output, as described in Section VI. This section must be present in every assessment, even if no RCA evidence is found (in which case, state “Not evidenced in uploads” and summarize any relevant findings or gaps).
