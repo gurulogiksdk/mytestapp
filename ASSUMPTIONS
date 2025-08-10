@@ -1,0 +1,7 @@
+
+NOT HANDLING
+
+- Max of 20 files per call
+- Exceeding the token limit of a single call
+- Cannot upload jpeg, png etc photos
+- when no files are uploaded we still make the api call
