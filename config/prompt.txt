@@ -30,7 +30,7 @@ II. Processing Pipeline
 1) Footprint & Flow Mapping — Identify workloads, platforms, and key data/traffic/identity flows from evidence. Provide a concise, evidence-anchored diagram description.
 
 2) Domain-by-Domain Review — Use the 25 domains in Section IV. Create a table with columns:
-   Domain | Current Design (Evidence & Platform) | Gap & Architectural Risk | Target Pattern for {TierLevel} (platform-specific) | Detailed Implementation Steps | Validation & Evidence Required | RCA Correlation | Risk Rating (🔴/🟡/🟢)
+  Domain | Current Design (Evidence & Platform) | Gap & Architectural Risk | Target Pattern for {TierLevel} (platform-specific) | Detailed Implementation Steps | Validation & Evidence Required | RCA Correlation | Risk Rating (🔴/🟡/🟢)
    - Use detailed, self-contained cells (what, where, why, how).
    - Reference exact services/configs for Target Pattern.
    - If no evidence for a domain: Current Design = “Not evidenced in uploads”, and keep other cells minimal but actionable.
@@ -42,6 +42,7 @@ II. Processing Pipeline
 ----------------------------------------------------------------
 III. Scoring & Calculation Logic (strict, normalized, impact-aware)
 ----------------------------------------------------------------
+
 Scoring rubric:
 - 5: Fully meets target pattern with current evidence; aligns to standard.
 - 4: Meets target with minor deviations.
@@ -68,21 +69,26 @@ Weights (and normalization):
   11:5, 12:3, 13:5, 14:5, 15:10, 16:10, 17:3, 18:3, 19:3, 20:3,
   21:2, 22:2, 23:2, 24:1, 25:1
 - If provided weights do not sum to 100, normalize them:
+
   Let raw weights be w_i and W = Σ w_i. Use normalized weights w_i' = 100 × (w_i / W).
   Always compute with normalized weights w_i'.
 
+
 Targets & Actuals:
 - Default Target T_i = 5 unless uploads explicitly set a different target for that domain (cite it).
-- Actual A_i ∈ {0..5}, justified by evidence. If no evidence: A_i = 0 and mark “Not evidenced in uploads”.
+- Actual A_i ∈ {{0..5}}, justified by evidence. If no evidence: A_i = 0 and mark “Not evidenced in uploads”.
+
 
 Per-domain Points (use normalized weight):
 - Points_i = w_i' × (A_i / T_i)
 - Keep internal precision to 4 decimals for summation; display Points to 2 decimals.
 
+
 Base RRI (%):
 - Include all 25 domains in the table. If a domain lacks evidence, it still appears with A_i=0.
 - BaseRRI = Σ Points_i     // already on a 0–100 scale because weights are normalized
 - Display BaseRRI to 1 decimal. Do NOT divide by 100 again. Do NOT average across domain count.
+
 
 Impact Adjustment (industry-backed):
 - Rationale: residual risk must factor impact (NIST SP 800-30, FAIR, ISO 27005/22317, FFIEC BCP).
@@ -90,13 +96,16 @@ Impact Adjustment (industry-backed):
 - Multipliers: High = 0.70, Medium = 0.85, Low = 1.00.
 - FinalRRI = round(BaseRRI × Multiplier, 1)
 
+
 Compliance (per domain):
 - Compliance = “Y” if A_i ≥ 0.8 × T_i, else “N”. (Independent of gating.)
+
 
 PASS/FAIL gating:
 - Tier 0 PASS: FinalRRI ≥ 90.0 AND every critical domain has A_i ≥ 4.
 - Tier 1 PASS: FinalRRI ≥ 80.0 AND every critical domain has A_i ≥ 3.
 - If gating fails, Status = FAIL regardless of FinalRRI; list failing critical domains.
+
 
 Transparency footnote (print under the Scoring table):
 “Points = normalized Weight × (Actual ÷ Target). BaseRRI = Σ Points. FinalRRI = BaseRRI × Impact Multiplier (High 0.70 / Medium 0.85 / Low 1.00). Weights normalized to sum to 100.”
